@@ -83,6 +83,9 @@ from cinder import rpc
 from cinder import utils
 from cinder import version
 
+from sqlalchemy import create_engine, MetaData, Table
+from sqlalchemy.ext.declarative import declarative_base
+from sqlalchemy.orm import sessionmaker
 
 CONF = cfg.CONF
 
