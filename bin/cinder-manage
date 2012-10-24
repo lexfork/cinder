@@ -62,7 +62,6 @@ import sys
 
 from oslo.config import cfg
 
-
 # If ../cinder/__init__.py exists, add ../ to Python search path, so that
 # it will override what happens to be installed in /usr/(local/)lib/python...
 POSSIBLE_TOPDIR = os.path.normpath(os.path.join(os.path.abspath(sys.argv[0]),
@@ -84,6 +83,9 @@ from cinder.openstack.common import uuidutils
 from cinder import utils
 from cinder import version
 
+from sqlalchemy import create_engine, MetaData, Table
+from sqlalchemy.ext.declarative import declarative_base
+from sqlalchemy.orm import sessionmaker
 
 CONF = cfg.CONF
 
