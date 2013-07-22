@@ -12,4 +12,3 @@ sphinx>=1.1.2,<1.2
 python-subunit
 testtools>=0.9.32
 testrepository>=0.0.17
-oslo.sphinx
