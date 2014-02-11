@@ -34,6 +34,7 @@ from cinder.openstack.common import eventlet_backdoor
 from cinder.openstack.common.gettextutils import _
 from cinder.openstack.common import importutils
 from cinder.openstack.common import log as logging
+from cinder.openstack.common import systemd
 from cinder.openstack.common import threadgroup
 
 
@@ -63,6 +64,7 @@ class Launcher(object):
 
         """
         service.start()
+        systemd.notify_once()
         service.wait()
 
     def launch_service(self, service):
