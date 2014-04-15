@@ -34,7 +34,7 @@ extensions = ['sphinx.ext.autodoc',
               'sphinx.ext.pngmath',
               'sphinx.ext.ifconfig',
               'sphinx.ext.graphviz',
-              'oslosphinx',
+              'oslo.sphinx',
               ]
 
 # autodoc generation is a bit aggressive and a nuisance
