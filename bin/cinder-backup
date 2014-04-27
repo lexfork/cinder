@@ -40,6 +40,7 @@ gettextutils.install('cinder')
 
 from cinder.common import config  # Need to register global_opts
 from cinder.openstack.common import log as logging
+from cinder.openstack.common import systemd
 from cinder import service
 from cinder import utils
 from cinder import version
@@ -56,4 +57,5 @@ if __name__ == '__main__':
     launcher = service.ProcessLauncher()
     server = service.Service.create(binary='cinder-backup')
     launcher.launch_server(server)
+    systemd.notify_once()
     launcher.wait()

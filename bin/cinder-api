@@ -42,6 +42,7 @@ gettextutils.install('cinder', lazy=False)
 
 from cinder.common import config  # Need to register global_opts
 from cinder.openstack.common import log as logging
+from cinder.openstack.common import systemd
 from cinder import service
 from cinder import utils
 from cinder import version
@@ -57,4 +58,5 @@ if __name__ == '__main__':
     utils.monkey_patch()
     server = service.WSGIService('osapi_volume')
     service.serve(server)
+    systemd.notify_once()
     service.wait()
